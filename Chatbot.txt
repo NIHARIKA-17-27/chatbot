@@ -1,0 +1,28 @@
+import re
+
+def chatbot_response(user_input):
+    # Convert user input to lowercase for case-insensitivity
+    user_input = user_input.lower()
+
+    # Define rules and responses
+    greeting_patterns = ['hello', 'hi', 'hey', 'howdy', 'hola']
+    response_to_greeting = 'Hello! How can I help you today?'
+
+    # Check for greetings
+    if any(pattern in user_input for pattern in greeting_patterns):
+        return response_to_greeting
+    else:
+        return 'Im sorry'
+
+# Simple loop to interact with the chatbot
+while True:
+    user_input = input('You: ')
+    
+    # Exit the loop if the user says 'bye'
+    if user_input.lower() == 'bye':
+        print('Chatbot: Goodbye!')
+        break
+
+    # Get the chatbot's response based on rules
+    bot_response = chatbot_response(user_input)
+    print('Chatbot:Hi! I am AI Robot')
